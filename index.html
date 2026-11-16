@@ -923,11 +923,11 @@ function drawHUD(){
  ctx.font='5px "Press Start 2P"';[['ch',CHANCLA,P.ch],['zap',ZAPOTE,inv.zap],['marq',MARQ,inv.marq],['kibi',KIBI,inv.kibi],['albo',ALBO,inv.albo||0]].forEach(([w,im,n],k)=>{const x=4+k*25;if(P.w===w){R(x-2,18,24,9,'rgba(255,210,63,.25)');ctx.strokeStyle='#ffd23f';ctx.lineWidth=.5;ctx.strokeRect(x-2,18,24,9)}ctx.globalAlpha=(n>0||w==='ch')?1:.3;ctx.drawImage(HD(im),x,20,Math.min(10,im.width),Math.min(6,im.height));ctx.fillStyle='#fff';ctx.fillText('x'+n,x+11,25);ctx.globalAlpha=1});
  ctx.fillStyle='#ff5fd8';ctx.fillText('PODER',132,25);for(let k=0;k<5;k++)R(160+k*5,20,4,5,k<P.kos%5?'#ff5fd8':'#333');ctx.fillStyle=inv.pow>0&&(fr>>3)%2?'#fff':'#ff5fd8';ctx.fillText(inv.pow>0?'★x'+inv.pow+' SALTA+CHANCLA':'',188,25);
  ctx.drawImage(HD(CAG),300,19,4,7);ctx.fillStyle='#ffd23f';ctx.fillText('x'+inv.cag+(inv.cag>=3?' ¡TSURU!':''),306,25);
- ctx.font='5px "Press Start 2P"';ctx.fillStyle='#aaa';ctx.fillText('AGUANTE',4,7);
+ ctx.font='4px "Press Start 2P"';ctx.fillStyle='#aaa';ctx.fillText('AGUANTE',4,7);
  for(let i=0;i<3;i++){ctx.globalAlpha=i<P.hp?1:.2;ctx.drawImage(CAG,4+i*8,8,6,10)}ctx.globalAlpha=1;
  ctx.fillStyle='#aaa';ctx.fillText('CHANCLAS',34,7);for(let i=0;i<2;i++){ctx.globalAlpha=i<P.ch?1:.2;ctx.drawImage(CHANCLA,36+i*10,10)}ctx.globalAlpha=1;
- ctx.fillStyle='#aaa';ctx.fillText('MARCA Y EJECUTA',68,7);for(let i=0;i<3;i++)R(68+i*16,10,14,5,P.charge>=(i+1)*33.3?(P.charge>=100&&(fr>>3)%2?'#fff':'#ff3b3b'):'#333');
- ctx.fillStyle='#aaa';ctx.fillText('BÚSQUEDA',128,7);for(let i=0;i<5;i++){const f=busq>=i+1?1:busq>i?busq-i:0;ctx.fillStyle=f>=1?((busq>=3&&(fr>>3)%2)?'#fff':'#ff3b3b'):f>0?'#7a2a2a':'#333';ctx.font=FONT;ctx.fillText('★',128+i*9,17)}
+ ctx.fillStyle='#aaa';ctx.fillText('MARCA Y EJEC.',68,7);for(let i=0;i<3;i++)R(68+i*16,10,14,5,P.charge>=(i+1)*33.3?(P.charge>=100&&(fr>>3)%2?'#fff':'#ff3b3b'):'#333');
+ ctx.fillStyle='#aaa';ctx.fillText('BÚSQUEDA',128,7);ctx.font='5px "Press Start 2P"';for(let i=0;i<5;i++){const f=busq>=i+1?1:busq>i?busq-i:0;ctx.fillStyle=f>=1?((busq>=3&&(fr>>3)%2)?'#fff':'#ff3b3b'):f>0?'#7a2a2a':'#333';ctx.font=FONT;ctx.fillText('★',128+i*9,17)}
  ctx.font='5px "Press Start 2P"';ctx.fillStyle='#ffd23f';ctx.fillText('PTS '+(total+score),180,7);
  ctx.fillStyle='#7ee0ff';ctx.fillText('M'+(li+1),180,15);R(196,11,60,3,'#333');R(196,11,60*Math.min(1,P.x/L.len),3,'#7effa0');
  if(L.heat){ctx.fillStyle='#aaa';ctx.fillText('TEMP. CHELA',262,7);R(262,10,60,5,'#333');const hc=heat<50?'#5ad0ff':heat<80?'#ffb03a':'#ff3b3b';R(262,10,60*heat/100,5,hc);ctx.fillStyle=hc;ctx.fillText(heat<50?'ESCARCHADA':heat<80?'TIBIA':'¡CALIENTE!',326,15)}
