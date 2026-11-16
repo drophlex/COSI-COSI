@@ -3,8 +3,8 @@
 Juego de sigilo yucateco con humor negro. Cosi Cosi huye de la Tira por vender clandestino, todo por conseguir su caguama escarchada como el culo del pingüino. ¡BEIBI BEIBI!
 
 ## ▶ Jugar
-- **En el navegador (celular o compu):** https://drophlex.github.io/cosi-cosi/
-- **Android (APK):** descárgala en [Releases](https://github.com/drophlex/cosi-cosi/releases/latest)
+- **En el navegador (celular o compu):** https://drophlex.github.io/COSI-COSI/
+- **Android (APK):** [descarga la APK aquí](https://github.com/drophlex/COSI-COSI/raw/main/CosiCosi-AgenteSecreto.apk) (al instalar, acepta "orígenes desconocidos")
 
 ## 🎮 Controles
 - **Celular:** joystick translúcido a la izquierda, botones SALTAR y CHANCLA a la derecha.

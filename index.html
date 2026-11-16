@@ -88,6 +88,7 @@ input,textarea,select{user-select:text;-webkit-user-select:text;font-family:syst
   <button class="btn" id="bPlay">JUGAR</button>
   <button class="btn" id="bSel">MISIONES</button>
   <button class="btn" id="bHow">CONTROLES E INSTRUCTIVO</button>
+  <a class="btn" id="bApk" href="https://github.com/drophlex/COSI-COSI/raw/main/CosiCosi-AgenteSecreto.apk" target="_blank" rel="noopener" style="text-decoration:none">📱 DESCARGAR APK (ANDROID)</a>
   <button class="btn" id="bDon">💛 APOYA / ¡APARECE EN EL JUEGO!</button>
   <button class="btn" id="bFin" style="display:none">🎬 VER EL FINAL</button>
   <button class="btn" id="bFull">PANTALLA COMPLETA</button>
@@ -1083,6 +1084,7 @@ function updWa(){}
 ['pNom','pIdea'].forEach(id=>$(id).addEventListener('input',updWa));$('ideas').addEventListener('change',updWa);updWa();
 $('bCopy').onclick=()=>{try{navigator.clipboard.writeText(propText()).then(()=>$('copyMsg').textContent='¡Copiada! Pégala en la nota de tu aportación de PayPal, beibi.').catch(()=>$('copyMsg').textContent='No se pudo copiar, escríbela en la nota de PayPal.')}catch(e){$('copyMsg').textContent='No se pudo copiar, escríbela en la nota de PayPal.'}};
 $('bDon').onclick=()=>showScr('sDon');
+if(window.AndroidApp){const ab=$('bApk');if(ab)ab.style.display='none'}
 $('bFin').onclick=()=>{unlockAudio();startCine(true)};
 function checkHash(){if(location.hash==='#final'&&state!=='cine'){unlockAudio();startCine(true)}}
 addEventListener('hashchange',checkHash);
