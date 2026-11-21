@@ -9,6 +9,7 @@ Juego de sigilo yucateco con humor negro. Cosi Cosi huye de la Tira por vender c
 > **¿Ya tenías la APK instalada?** La versión 3.0 viene firmada con la llave definitiva: si te sale error al instalar, desinstala la anterior y luego instala esta (el avance guardado en la app se pierde; en el navegador no). De aquí en adelante, en el menú de la app está **🔄 BUSCAR ACTUALIZACIONES**.
 
 ## 🆕 Lo nuevo
+- **Misión 16 · Polaris Sound Lab y el Chembech** — Cosi visita el estudio (Dark Funk Durcal, al que nadie le ve la cara, se va como ninja) y luego el Chembech Listening Club con Óscar y Barry Sound. Premio: 5 chancletas ultra poderosas para la siguiente misión.
 - **Misión 15 · Karl Cotbrum: el scratch que salvó a Cosi** — juegas con Karl en los platos: scratchea al ritmo (◀ ▶ ✂) hasta que la banda se prenda y le cierre el paso a la Tira.
 - **Sin candados:** todas las misiones se pueden jugar; lo que piden se resuelve dentro de la misma misión.
 - **Textos que se alcanzan a leer:** las frases duran según lo largas que sean y no se enciman.
