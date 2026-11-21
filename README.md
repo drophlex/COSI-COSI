@@ -4,7 +4,7 @@ Juego de sigilo yucateco con humor negro. Cosi Cosi huye de la Tira por vender c
 
 ## ▶ Jugar
 - **En el navegador (celular o compu):** https://drophlex.github.io/COSI-COSI/
-- **Android (APK):** [descarga la APK aquí](https://github.com/drophlex/COSI-COSI/raw/main/CosiCosi-AgenteSecreto.apk) (al instalar, acepta "orígenes desconocidos")
+- **Android (APK):** [descarga la APK aquí](https://drophlex.github.io/COSI-COSI/CosiCosi-AgenteSecreto.apk) (al instalar, acepta "orígenes desconocidos"). Ábrelo en Chrome: desde el navegador de Instagram o Facebook no se puede descargar.
 
 ## 🎮 Controles
 - **Celular:** joystick translúcido a la izquierda, botones SALTAR y CHANCLA a la derecha.
