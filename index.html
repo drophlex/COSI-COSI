@@ -104,6 +104,8 @@ input,textarea,select{user-select:text;-webkit-user-select:text;font-family:syst
   <button class="btn" id="bHow">CONTROLES E INSTRUCTIVO</button>
   <a class="btn" id="bApk" href="CosiCosi-AgenteSecreto.apk" download="CosiCosi-AgenteSecreto.apk" type="application/vnd.android.package-archive" style="text-decoration:none">📱 DESCARGAR APK (ANDROID)</a>
   <p class="c" id="apkHelp" style="display:none;max-width:560px;margin:4px auto 8px;font-size:12px;line-height:1.5;color:#ffd166"></p>
+  <button class="btn" id="bUpd" style="display:none">🔄 BUSCAR ACTUALIZACIONES</button>
+  <p class="c" id="updMsg" style="display:none;max-width:560px;margin:4px auto 8px;font-size:12px;line-height:1.5;color:#7effa0"></p>
   <button class="btn" id="bDon">💛 APOYA / ¡APARECE EN EL JUEGO!</button>
   <button class="btn" id="bFin">🎬 EXTRAS: MINIJUEGOS Y LOS 4 FINALES</button>
   <button class="btn" id="bFull">PANTALLA COMPLETA</button>
@@ -1362,7 +1364,20 @@ function updWa(){}
 ['pNom','pIdea'].forEach(id=>$(id).addEventListener('input',updWa));$('ideas').addEventListener('change',updWa);updWa();
 $('bCopy').onclick=()=>{try{navigator.clipboard.writeText(propText()).then(()=>$('copyMsg').textContent='¡Copiada! Pégala en la nota de tu aportación de PayPal, beibi.').catch(()=>$('copyMsg').textContent='No se pudo copiar, escríbela en la nota de PayPal.')}catch(e){$('copyMsg').textContent='No se pudo copiar, escríbela en la nota de PayPal.'}};
 $('bDon').onclick=()=>showScr('sDon');
-if(window.AndroidApp){const ab=$('bApk');if(ab)ab.style.display='none'}
+if(window.AndroidApp){const ab=$('bApk');if(ab)ab.style.display='none';
+ // ---- buscar actualizaciones (solo en la app de Android) ----
+ const APP_BUILD=8,APP_VER='3.0',BASE='https://drophlex.github.io/COSI-COSI/';
+ const bu=$('bUpd'),um=$('updMsg');bu.style.display='block';
+ const show=(html,col)=>{um.style.display='block';um.style.color=col||'#7effa0';um.innerHTML=html};
+ const dl='<br><a class="btn" style="display:inline-block;margin-top:8px;text-decoration:none" href="'+BASE+'CosiCosi-AgenteSecreto.apk">⬇ DESCARGAR LA NUEVA VERSIÓN</a><br><small>Se abre en tu navegador. Al terminar, toca el archivo para instalarla encima de esta.</small>';
+ async function check(silent){if(!silent){bu.textContent='🔄 BUSCANDO...';show('Revisando si hay versión nueva...','#ddd')}
+  try{const r=await fetch(BASE+'version.json?t='+Date.now(),{cache:'no-store'});const j=await r.json();try{localStorage.setItem('cosicosi_updchk',String(Date.now()))}catch(e){}
+   if(j.build>APP_BUILD){bu.textContent='🆕 ¡HAY ACTUALIZACIÓN! (v'+j.version+')';bu.style.borderColor='#7effa0';show('<b>¡Hay versión nueva: '+j.version+'!</b>'+(j.notes?'<br>'+j.notes:'')+dl)}
+   else{bu.textContent='🔄 BUSCAR ACTUALIZACIONES';if(!silent)show('Ya tienes la versión más nueva ('+APP_VER+'). ¡Beibi beibi!')}}
+  catch(e){bu.textContent='🔄 BUSCAR ACTUALIZACIONES';if(!silent)show('No se pudo revisar. ¿Tienes internet? También puedes bajar la última versión aquí:'+dl,'#ffd166')}}
+ bu.onclick=()=>check(false);
+ let last=0;try{last=+localStorage.getItem('cosicosi_updchk')||0}catch(e){}if(Date.now()-last>6*3600*1000)setTimeout(()=>check(true),2500);
+}
 else(function(){// APK download: same-site link; in-app browsers (Instagram, Facebook, TikTok…) can't download files, so send Android to Chrome; iPhone can't install APKs
  const ab=$('bApk'),h=$('apkHelp');if(!ab||!h)return;
  const ua=navigator.userAgent||'',apk=new URL('CosiCosi-AgenteSecreto.apk',location.href).href,rel='https://github.com/drophlex/COSI-COSI/blob/main/CosiCosi-AgenteSecreto.apk';
